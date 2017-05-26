@@ -1,0 +1,19 @@
+<div *ngIf="cerebra">
+<h2 class="page-header">{{cerebra.cerebraName}}</h2>
+<div class="row">
+  <div class="col-md-8">
+    <ul class="list-group">
+      <li class="list-group-item">Creator: {{cerebra.cerebraCreator}}</li>
+      <li class="list-group-item">Description: {{cerebra.cerebraDescription}}</li>
+      <li class="list-group-item">Tasks: {{cerebra.cerebraTasks}}</li>
+      <li class="list-group-item">Id: {{cerebra.cerebraId}}</li>
+      <li class="list-group-item">Tags: {{cerebra.cerebraTags}}</li>
+      <li class="list-group-item">Likes: {{cerebra.cerebraLikes}}</li>
+    </ul>
+  </div>
+  <a class="btn btn-default" [routerLink]="['/edit-cerebra/'+cerebra.$key]">Edit</a>
+  <a class="btn btn-danger" href="#">Delete</a>
+</div>
+<a [routerLink]="['/cerebras']">Go Back</a>
+</div>
+
