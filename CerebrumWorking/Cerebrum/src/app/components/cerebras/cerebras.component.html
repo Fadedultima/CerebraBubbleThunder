@@ -1,5 +1,22 @@
-<uL class="list-group">
+<div class="cerebrasDiv">
+  <div>
+    <form class="well">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search Cerebras" [(ngModel)]="search" name="search" (keyup)="searchCerebras()">	
+			</div>						
+		</form>
+  </div>
+  <div id="individualCerebra" *ngFor='let cerebra of cerebras'>
+     <a [routerLink]="['/cerebra/'+cerebra.$key]">{{cerebra.cerebraName}}</a>
+     <h5>Creator: {{ cerebra.cerebraCreator }}</h5>
+     <h5>Tags: {{ cerebra.cerebraTags }}</h5>
+     <h5>Likes: {{ cerebra.cerebraLikes }}</h5>
+  </div>
+</div>
+
+
+<!--<uL class="list-group">
   <li class="list-group-item" *ngFor="let cerebra of cerebras">
     <a [routerLink]="['/cerebra/'+cerebra.$key]">{{cerebra.cerebraName}}</a>
   </li>
-</uL>
+</uL>-->

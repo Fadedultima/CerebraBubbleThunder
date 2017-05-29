@@ -11,9 +11,11 @@
       <li class="list-group-item">Likes: {{cerebra.cerebraLikes}}</li>
     </ul>
   </div>
-  <a class="btn btn-default" [routerLink]="['/edit-cerebra/'+cerebra.$key]">Edit</a>
-  <a class="btn btn-danger" href="#">Delete</a>
+
 </div>
-<a [routerLink]="['/cerebras']">Go Back</a>
+  <a class="btn btn btn-default" id="backButton" [routerLink]="['/cerebras']">Go Back</a>
+  <a class="btn btn-warning" [routerLink]="['/edit-cerebra/'+cerebra.$key]">Edit</a>
+  <a (click)="onDeleteClick()" class="btn btn-danger">Delete</a>
+
 </div>
 
