@@ -17,7 +17,6 @@ export class FirebaseService {
 
   getCerebras(){
     return this.cerebras;
-
   }
 
   getCerebraDetails(id){
@@ -26,8 +25,6 @@ export class FirebaseService {
   }
 
   addCerebra(cerebra){
-    //create root ref
-    
     return this.cerebras.push(cerebra);
     
   }
@@ -46,7 +43,6 @@ export class FirebaseService {
 
 }
 
-//create interface
 interface Cerebra{
   $key?: string;
   cerebraCreator?: string;

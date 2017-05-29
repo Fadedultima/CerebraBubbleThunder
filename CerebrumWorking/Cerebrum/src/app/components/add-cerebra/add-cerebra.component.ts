@@ -12,13 +12,21 @@ export class AddCerebraComponent implements OnInit {
   cerebraDescription: any;
   cerebraTasks: any;
   cerebraTags: any;
+  cerebraCreator: string;
 
 
   constructor(
     private firebaseService:FirebaseService,
-    private router:Router
+    private router:Router,
+    public authService:FirebaseService
 
-  ) { }
+  ) {
+    this.authService.af.auth.subscribe(
+      (auth) => {
+    this.cerebraCreator = auth.google.displayName;
+      }
+    );
+   }
 
   ngOnInit() {
   }
@@ -29,10 +37,10 @@ export class AddCerebraComponent implements OnInit {
       cerebraDescription: this.cerebraDescription,
       cerebraTasks: this.cerebraTasks,
       cerebraTags: this.cerebraTags,
+      cerebraCreator: this.cerebraCreator
     }
     this.firebaseService.addCerebra(cerebra);
     this.router.navigate(['/cerebras']);
-    console.log("onaddsubmit pressed");
   }
 
 }
