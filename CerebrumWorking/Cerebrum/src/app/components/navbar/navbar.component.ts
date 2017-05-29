@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire } from 'angularfire2';
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 
@@ -20,7 +20,10 @@ export class NavbarComponent implements OnInit {
   }
 
   login(){
-    this.af.auth.login();
+    this.af.auth.login({
+      provider: AuthProviders.Google,
+      method: AuthMethods.Popup
+    });
   }
 
   logout(){

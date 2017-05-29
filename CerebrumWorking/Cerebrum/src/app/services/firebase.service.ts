@@ -10,7 +10,7 @@ export class FirebaseService {
   cerebra: FirebaseObjectObservable<any>;
   folder: any;
 
-  constructor(private af: AngularFire) { 
+  constructor(public af: AngularFire) { 
     this.cerebras = this.af.database.list('/cerebras') as FirebaseListObservable<Cerebra[]>
     this.folder = 'cerebras';
   }
