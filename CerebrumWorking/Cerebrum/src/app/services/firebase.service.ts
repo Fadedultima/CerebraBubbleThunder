@@ -41,6 +41,10 @@ export class FirebaseService {
     return this.af.database.list('cerebras').map(_cerebras => _cerebras.filter(cerebra => cerebra.cerebraName.toLowerCase().indexOf(cerebraName) !== -1));
   }
 
+  getCerebrasByUser(cerebraName: any): Observable<Cerebra[]> {
+    return this.af.database.list('cerebras').map(cerebras => cerebras.filter(Cerebra => Cerebra.cerebraCreator.indexOf(cerebraName) !== -1));
+  }
+
 }
 
 interface Cerebra{

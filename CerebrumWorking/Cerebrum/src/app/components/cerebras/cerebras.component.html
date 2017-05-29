@@ -9,14 +9,14 @@
   <div id="individualCerebra" *ngFor='let cerebra of cerebras'>
      <a [routerLink]="['/cerebra/'+cerebra.$key]">{{cerebra.cerebraName}}</a>
      <h5>Creator: {{ cerebra.cerebraCreator }}</h5>
-     <h5>Tags: {{ cerebra.cerebraTags }}</h5>
-     <h5>Likes: {{ cerebra.cerebraLikes }}</h5>
+     <br>
+     <div class="row">
+      <div class="col-md-2"><h6 class="glyphicon glyphicon-tag"> {{ cerebra.cerebraTags }}</h6></div>
+      <div class="col-md-8"></div>
+      <div class="col-md-2"><h6 class="glyphicon glyphicon-thumbs-up"> {{ cerebra.cerebraLikes }}</h6></div>
+    </div>
+     
+     
   </div>
 </div>
 
-
-<!--<uL class="list-group">
-  <li class="list-group-item" *ngFor="let cerebra of cerebras">
-    <a [routerLink]="['/cerebra/'+cerebra.$key]">{{cerebra.cerebraName}}</a>
-  </li>
-</uL>-->
