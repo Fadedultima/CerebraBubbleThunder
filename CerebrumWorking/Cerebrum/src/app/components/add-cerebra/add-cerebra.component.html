@@ -14,11 +14,16 @@
   </div>
   <div class="form-group">
     <label>Cerebra Tags: </label>
-    <input class="form-control" type="text"[(ngModel)]="cerebraTags" name="cerebraTags" required>
+    <input class="form-control" type="text" [(ngModel)]="cerebraTags" name="cerebraTags" required>
   </div>
-  
+  <div>
+    <h4>Cerebra Creator: {{cerebraCreator}}</h4>
+  </div>
+  <br>
   <input type="submit" value="Submit" class="btn btn-success">
+  <br>
 </form>
+<br>
 
 
 

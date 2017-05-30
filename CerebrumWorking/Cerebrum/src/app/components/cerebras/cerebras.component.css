@@ -1,0 +1,30 @@
+#individualCerebra {
+    display: inline-block;
+	border: 1px solid black;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #888888;
+	background-color: orange;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-color: white;
+	text-align: center;
+    margin: 5px;
+    width: 250px;
+}
+
+#individualCerebra h4{
+    color: white;
+}
+
+#individualCerebra h5{
+    color: white;
+}
+
+#individualCerebra a:hover{
+    text-decoration: none;
+}
+
+#containCerebraList {
+    padding: 20px;
+}

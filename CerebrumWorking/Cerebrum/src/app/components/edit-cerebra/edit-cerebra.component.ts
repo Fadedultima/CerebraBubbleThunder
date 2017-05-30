@@ -23,6 +23,26 @@ export class EditCerebraComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
+
+    this.firebaseService.getCerebraDetails(this.id).subscribe(cerebra => {
+      console.log(cerebra);
+      this.cerebraName = cerebra.cerebraName;
+      this.cerebraDescription = cerebra.cerebraDescription;
+      this.cerebraTasks = cerebra.cerebraTasks;
+      this.cerebraTags = cerebra.cerebraTags;
+    });
+  }
+
+  onEditSubmit(){
+    let cerebra = {
+      cerebraName: this.cerebraName,
+      cerebraDescription: this.cerebraDescription,
+      cerebraTasks: this.cerebraTasks,
+      cerebraTags: this.cerebraTags
+    }
+
+    this.firebaseService.updateCerebra(this.id, cerebra);
+    this.router.navigate(['/cerebras']);
   }
 
 }
