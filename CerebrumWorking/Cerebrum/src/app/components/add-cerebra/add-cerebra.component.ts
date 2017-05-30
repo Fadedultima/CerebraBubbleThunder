@@ -34,5 +34,9 @@ export class AddCerebraComponent implements OnInit {
     this.router.navigate(['/cerebras']);
     console.log("onaddsubmit pressed");
   }
+	
+	addTask(){
+		//div: HTMLElement = document.getElementById("taskList");
+	}
 
 }
