@@ -25,9 +25,7 @@ export class FirebaseService {
 
   addCerebra(cerebra){
     //create root ref
-    
     return this.cerebras.push(cerebra);
-    
   }
 
 }
