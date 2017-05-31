@@ -3,6 +3,7 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 import * as firebase from 'firebase';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/take';
 
 @Injectable()
 export class FirebaseService {
@@ -43,6 +44,35 @@ export class FirebaseService {
   getCerebrasByUser(cerebraName: any): Observable<Cerebra[]> {
     return this.af.database.list('cerebras').map(cerebras => cerebras.filter(Cerebra => Cerebra.cerebraCreator.indexOf(cerebraName) !== -1));
   }
+
+  addLikeToCerebra(id){
+    this.af.database.object('cerebras/' + id + '/cerebraLikes').take(1).subscribe((data) => {
+      let newData = data.$value + 1;
+      this.af.database.object('cerebras/' + id + '/cerebraLikes').set(newData)
+    });
+  }
+
+  subtractLikeFromCerebra(id){
+    this.af.database.object('cerebras/' + id + '/cerebraLikes').take(1).subscribe((data) => {
+      let newData = data.$value - 1;
+      this.af.database.object('cerebras/' + id + '/cerebraLikes').set(newData)
+    });
+  }
+
+  addToLikes(uid, id){
+    this.af.database.object('cerebras/' + id + "/cerebraName").take(1).subscribe((data) => {
+      console.log(data.$value);
+      this.af.database.object('likes/' + uid + "/" + id + "/name").set(data.$value);
+    });
+  }
+
+  removeFromLikes(uid, id){
+    return this.af.database.list('likes/' + uid).remove(id);
+  }
+
+
+
+
 
 }
 
