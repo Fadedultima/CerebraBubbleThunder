@@ -80,6 +80,6 @@ interface Cerebra{
   cerebraName?: string;
   cerebraTags?: string;
   cerebraLikes?: number;
-  cerebraTasks?: string;
+  cerebraTasks?: any[];
 
 }

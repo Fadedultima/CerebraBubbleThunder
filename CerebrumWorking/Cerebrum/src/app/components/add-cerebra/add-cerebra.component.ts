@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 export class AddCerebraComponent implements OnInit {
   cerebraName: any;
   cerebraDescription: any;
-  cerebraTasks: any;
+  cerebraTasks: any = [{name: ''}, {name: ''}, {name: ''}];
   cerebraTags: any;
   cerebraCreator: string;
-
+  //taskArray: string[] = ['', '', ''];
 
   constructor(
     private firebaseService:FirebaseService,
@@ -32,6 +32,7 @@ export class AddCerebraComponent implements OnInit {
   }
 
   onAddSubmit(){
+	  //set cerebraTasks to the list of tasks obtained from input boxes
     let cerebra = {
       cerebraName: this.cerebraName,
       cerebraDescription: this.cerebraDescription,
@@ -42,5 +43,10 @@ export class AddCerebraComponent implements OnInit {
     this.firebaseService.addCerebra(cerebra);
     this.router.navigate(['/cerebras']);
   }
+	
+	addTask(event){
+		console.log("testing");
+		this.cerebraTasks.push({name: ""});
+	}
 
 }
