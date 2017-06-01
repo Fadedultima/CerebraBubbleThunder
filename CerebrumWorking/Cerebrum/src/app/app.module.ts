@@ -15,6 +15,8 @@ import { CerebraComponent } from './components/cerebra/cerebra.component';
 import { CerebrasComponent } from './components/cerebras/cerebras.component';
 import { AddCerebraComponent } from './components/add-cerebra/add-cerebra.component';
 import { EditCerebraComponent } from './components/edit-cerebra/edit-cerebra.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { TaskComponent } from './components/task/task.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBRIJoWGMaQxVyE6pN721edw0-Req64JpY",
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
   {path: 'cerebras', component:CerebrasComponent},
   {path: 'cerebra/:id', component:CerebraComponent},
   {path: 'add-cerebra', component:AddCerebraComponent},
-  {path: 'edit-cerebra/:id', component:EditCerebraComponent}
+  {path: 'edit-cerebra/:id', component:EditCerebraComponent},
+  {path: 'profile', component:ProfileComponent}
 ]
 
 @NgModule({
@@ -45,7 +48,8 @@ const appRoutes: Routes = [
     CerebraComponent,
     CerebrasComponent,
     AddCerebraComponent,
-    EditCerebraComponent
+    EditCerebraComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

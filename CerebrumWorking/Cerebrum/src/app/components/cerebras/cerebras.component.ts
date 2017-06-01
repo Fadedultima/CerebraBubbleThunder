@@ -8,12 +8,24 @@ import { FirebaseService } from '../../services/firebase.service';
 })
 export class CerebrasComponent implements OnInit {
   cerebras: any;
+  search: any;
+  count: any;
 
-  constructor(private firebaseService:FirebaseService) { }
+  constructor(private firebaseService:FirebaseService) { 
+
+    this.firebaseService.getCerebras().subscribe(cerebras => {
+      this.cerebras = cerebras;
+      console.log(cerebras);
+      this.count = cerebras.length;
+    });
+  }
 
   ngOnInit() {
-    this.firebaseService.getCerebras().subscribe(cerebras => {
-      console.log(cerebras);
+    
+  }
+
+  searchCerebras(){
+    this.firebaseService.getCerebrasByTitle(this.search.toLowerCase()).subscribe(cerebras => {
       this.cerebras = cerebras;
     });
   }

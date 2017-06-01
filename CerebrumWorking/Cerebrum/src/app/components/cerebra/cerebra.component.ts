@@ -29,4 +29,10 @@ export class CerebraComponent implements OnInit {
     });
   }
 
+  onDeleteClick(){
+    this.firebaseService.deleteCerebra(this.id);
+
+    this.router.navigate(['/cerebras']);
+  }
+
 }
