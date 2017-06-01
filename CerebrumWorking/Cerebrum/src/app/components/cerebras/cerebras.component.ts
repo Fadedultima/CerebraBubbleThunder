@@ -36,6 +36,10 @@ export class CerebrasComponent implements OnInit {
     
   }
 
+  likeThing(id){
+    this.firebaseService.addLikeToCerebra(id);
+  }
+
   searchCerebras(){
     this.firebaseService.getCerebrasByTitle(this.search.toLowerCase()).subscribe(cerebras => {
       this.cerebras = cerebras;

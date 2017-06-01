@@ -11,9 +11,8 @@ export class ProfileComponent implements OnInit {
   user_email: string;
   isLoggedIn: Boolean;
 
-
   constructor(public authService: FirebaseService, public firebaseService:FirebaseService) { 
-    
+
     this.authService.af.auth.subscribe(
       (auth) => {
         if(auth == null){
