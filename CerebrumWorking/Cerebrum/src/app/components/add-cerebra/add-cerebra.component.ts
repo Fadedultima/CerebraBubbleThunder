@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-cerebra',
   templateUrl: './add-cerebra.component.html',
-  styleUrls: ['./add-cerebra.component.css']
+  styleUrls: ['./add-cerebra.component.css'],
 })
 export class AddCerebraComponent implements OnInit {
   cerebraName: any;

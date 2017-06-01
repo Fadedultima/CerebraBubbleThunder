@@ -10,7 +10,8 @@
 	border-color: white;
 	text-align: center;
     margin: 5px;
-    width: 250px;
+    width: 350px;
+    max-height: 150px;
 }
 
 #individualCerebra h4{

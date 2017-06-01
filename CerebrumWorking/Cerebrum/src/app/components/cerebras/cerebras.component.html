@@ -6,9 +6,9 @@
 			</div>						
 		</form>
   </div>
-  <div id="individualCerebra" *ngFor='let cerebra of cerebras'>
-     <a [routerLink]="['/cerebra/'+cerebra.$key]">{{cerebra.cerebraName}}</a>
-     <h5>Creator: {{ cerebra.cerebraCreator }}</h5>
+  <div id="individualCerebra" [@fadeIn] *ngFor='let cerebra of cerebras'>
+     <a [routerLink]="['/cerebra/'+cerebra.$key]"><h4>{{cerebra.cerebraName}}</h4></a>
+     <h6>Creator: {{ cerebra.cerebraCreator }}</h6>
      <br>
      <div class="row">
       <div class="col-md-2"><h6 class="glyphicon glyphicon-tag"> {{ cerebra.cerebraTags }}</h6></div>

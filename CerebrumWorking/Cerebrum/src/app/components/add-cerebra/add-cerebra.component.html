@@ -1,3 +1,4 @@
+<div class="container">
 <h2 class="page-header">Add Cerebra</h2>
 <form (submit)="onAddSubmit()">
   <div class="form-group">
@@ -17,13 +18,14 @@
     <input class="form-control" type="text" [(ngModel)]="cerebraTags" name="cerebraTags" required>
   </div>
   <div>
-    <h4>Cerebra Creator: {{cerebraCreator}}</h4>
+    <h4>Creator: {{cerebraCreator}}</h4>
   </div>
   <br>
   <input type="submit" value="Submit" class="btn btn-success">
   <br>
 </form>
 <br>
+</div>
 
 
 

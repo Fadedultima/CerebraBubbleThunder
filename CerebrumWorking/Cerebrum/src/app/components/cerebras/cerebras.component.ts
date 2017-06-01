@@ -1,10 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, trigger, state, style, transition, animate, keyframes, group } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
   selector: 'app-cerebras',
   templateUrl: './cerebras.component.html',
-  styleUrls: ['./cerebras.component.css']
+  styleUrls: ['./cerebras.component.css'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({}),
+        animate(700, keyframes([
+          style({opacity: 0, offset: 0}),
+          style({opacity: .6, offset: 0.7}),
+          style({opacity: 1, offset: 1.0})
+        ]))
+      ]),
+    ])
+  ],
+  host: { '[@fadeIn]': '' }
 })
 export class CerebrasComponent implements OnInit {
   cerebras: any;
@@ -15,7 +28,6 @@ export class CerebrasComponent implements OnInit {
 
     this.firebaseService.getCerebras().subscribe(cerebras => {
       this.cerebras = cerebras;
-      console.log(cerebras);
       this.count = cerebras.length;
     });
   }

@@ -8,11 +8,11 @@ import 'rxjs/add/operator/map';
 export class FirebaseService {
   cerebras: FirebaseListObservable<any[]>;
   cerebra: FirebaseObjectObservable<any>;
-  folder: any;
+  user_displayName: string;
+  
 
   constructor(public af: AngularFire) { 
     this.cerebras = this.af.database.list('/cerebras') as FirebaseListObservable<Cerebra[]>
-    this.folder = 'cerebras';
   }
 
   getCerebras(){
@@ -39,10 +39,6 @@ export class FirebaseService {
 
   getCerebrasByTitle(cerebraName: any): Observable<Cerebra[]> {
     return this.af.database.list('cerebras').map(_cerebras => _cerebras.filter(cerebra => cerebra.cerebraName.toLowerCase().indexOf(cerebraName) !== -1));
-  }
-
-  getCerebrasByUser(cerebraName: any): Observable<Cerebra[]> {
-    return this.af.database.list('cerebras').map(cerebras => cerebras.filter(Cerebra => Cerebra.cerebraCreator.indexOf(cerebraName) !== -1));
   }
 
 }
