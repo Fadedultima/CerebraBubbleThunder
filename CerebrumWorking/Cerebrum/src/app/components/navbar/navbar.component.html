@@ -7,11 +7,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Cerebrum</a>
+          <a class="navbar-brand">Cerebrum</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-left">
-            <li><a [routerLink]="['/']">Home</a></li>
+            <li *ngIf="!(af.auth | async)"><a [routerLink]="['/']">Home</a></li>
             <li *ngIf="(af.auth | async)"><a [routerLink]="['/cerebras']">Cerebras</a></li>
             <li *ngIf="(af.auth | async)"><a [routerLink]="['/add-cerebra']">Add Cerebra</a></li>
             <li *ngIf="(af.auth | async)"><a [routerLink]="['/profile']">Profile</a></li>

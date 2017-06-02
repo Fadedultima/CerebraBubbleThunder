@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
       provider: AuthProviders.Google,
       method: AuthMethods.Popup
     });
+	  this.router.navigate(['/cerebras']);
   }
 
   logout(){

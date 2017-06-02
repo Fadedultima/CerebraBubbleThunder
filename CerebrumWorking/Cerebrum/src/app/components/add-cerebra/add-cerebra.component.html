@@ -10,11 +10,6 @@
   </div>
   <div class="form-group">
     <label>Cerebra Tasks: </label>
-<!--
-	  <div>
-	  	<input class="tasks" type="text" ng-repeat="task in taskArray" [(ngModel)]="cerebraTasks" name="cerebraTasks" >
-	  </div>
--->
 	  <div *ngFor="let task of cerebraTasks;let index = index">
 		  <input name="task{{index}}" [(ngModel)]="cerebraTasks[index].name" type="text">
 	  </div>
