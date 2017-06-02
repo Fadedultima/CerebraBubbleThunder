@@ -3,8 +3,9 @@
 	border: 1px solid black;
 	border-radius: 5px;
 	box-shadow: 2px 2px 2px #888888;
-	background-color: orange;
+	background-color: #9A0CE8;
 	color: white;
+    
 	padding-left: 20px;
 	padding-right: 20px;
 	border-color: white;
@@ -16,6 +17,7 @@
 
 #individualCerebra h4{
     color: white;
+    font-family: "Arial Black", Gadget, sans-serif;
 }
 
 #individualCerebra h5{

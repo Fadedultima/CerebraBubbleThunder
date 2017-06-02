@@ -1,5 +1,40 @@
-<div *ngIf="cerebra">
-<h2 class="page-header">{{cerebra.cerebraName}}</h2>
+<div class="form-style-10">
+<h1>{{cerebra.cerebraName}}<span></span></h1>
+
+    <div class="section"><span>1</span>Details</div>
+        <div class="inner-wrap">
+            <label>Creator: {{cerebra.cerebraCreator}}</label>
+            <label>Description: {{cerebra.cerebraDescription}}</label>
+        </div>
+
+    <div class="section"><span>2</span>Tasks</div>
+        <div class="inner-wrap">
+            <ul *ngFor="let task of cerebra.cerebraTasks;">
+              <li>{{task.name}}</li>
+            </ul>
+        </div>
+            
+    <div class="section"><span>3</span>Tags</div>
+        <div class="inner-wrap">
+          <label>{{cerebra.cerebraTags}}</label>
+        </div>
+    <div class="section"><span>4</span>Likes</div>
+        <div class="inner-wrap">
+          <label>{{cerebra.cerebraLikes}}</label>
+        </div>
+    <div>
+        <a class="btn" id="backButton" [routerLink]="['/cerebras']">Go Back</a>
+        <a class="btn btn-warning" [routerLink]="['/edit-cerebra/'+cerebra.$key]">Edit</a>
+        <a (click)="onDeleteClick()" class="btn btn-danger">Delete</a>
+    </div>
+
+</div>
+<br>
+<br>
+
+
+<!--<div class="form-style-10" *ngIf="cerebra">
+<h2 class="page-header">{{cerebra.cerebraName}} Details</h2>
 <div class="row">
   <div class="col-md-8">
     <ul class="list-group">
@@ -22,5 +57,6 @@
 
 </div>
 
-<br>
+<br>-->
+
 

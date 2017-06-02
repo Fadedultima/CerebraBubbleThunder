@@ -13,7 +13,6 @@ export class AddCerebraComponent implements OnInit {
   cerebraTasks: any = [{name: ''}, {name: ''}, {name: ''}];
   cerebraTags: any;
   cerebraCreator: string;
-  //taskArray: string[] = ['', '', ''];
 
   constructor(
     private firebaseService:FirebaseService,
@@ -32,7 +31,6 @@ export class AddCerebraComponent implements OnInit {
   }
 
   onAddSubmit(){
-	  //set cerebraTasks to the list of tasks obtained from input boxes
     let cerebra = {
       cerebraName: this.cerebraName,
       cerebraDescription: this.cerebraDescription,

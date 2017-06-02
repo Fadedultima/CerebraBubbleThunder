@@ -1,1 +1,20 @@
 li { cursor: pointer; cursor: hand; }
+
+.navbar-inverse {
+    background-color: #0D47FF;
+}
+
+
+.navbar-nav > li > a:hover, .navbar-nav .navbar-nav > li > a:focus{
+    background-color: #5897FF;
+    color: white;
+}
+
+
+
+
+/*FFD806
+EE7200
+FF0000
+9A0CE8
+0D47FF*/

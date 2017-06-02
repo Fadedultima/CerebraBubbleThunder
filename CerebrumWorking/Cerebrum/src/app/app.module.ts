@@ -16,7 +16,7 @@ import { CerebrasComponent } from './components/cerebras/cerebras.component';
 import { AddCerebraComponent } from './components/add-cerebra/add-cerebra.component';
 import { EditCerebraComponent } from './components/edit-cerebra/edit-cerebra.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { TaskComponent } from './components/task/task.component';
+
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBRIJoWGMaQxVyE6pN721edw0-Req64JpY",
