@@ -3,7 +3,7 @@
 <form (submit)="onAddSubmit()">
     <div class="section"><span>1</span>Cerebra Name</div>
     <div class="inner-wrap">
-        <label>Cerebra Name <input type="text" [(ngModel)]="cerebraName" name="cerebraName" required></label>
+        <label>Cerebra Name <input type="text" maxlength="30" [(ngModel)]="cerebraName" name="cerebraName" required></label>
         <label>Description <input type="text" [(ngModel)]="cerebraDescription"name="cerebraDescription" required></label>
         
     </div>
@@ -21,7 +21,7 @@
 
     <div class="section"><span>3</span>Tags</div>
         <div class="inner-wrap">
-        <label>Tags <input class="form-control" type="text" [(ngModel)]="cerebraTags" name="cerebraTags" ></label>
+        <label>Tags(No spaces allowed) <input class="form-control" maxlength="20" type="text" [(ngModel)]="cerebraTags" name="cerebraTags" pattern="^\S+$"></label>
     </div>
      <div>
     <h4>Cerebra Creator: {{cerebraCreator}}</h4>
