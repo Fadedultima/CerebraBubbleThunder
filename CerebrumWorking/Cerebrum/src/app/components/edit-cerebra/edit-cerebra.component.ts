@@ -13,6 +13,7 @@ export class EditCerebraComponent implements OnInit {
   cerebraDescription: any;
   cerebraTasks: any;
   cerebraTags: any;
+  cerebraCreator: any;
 
 
   constructor(
@@ -30,6 +31,7 @@ export class EditCerebraComponent implements OnInit {
       this.cerebraDescription = cerebra.cerebraDescription;
       this.cerebraTasks = cerebra.cerebraTasks;
       this.cerebraTags = cerebra.cerebraTags;
+      this.cerebraCreator = cerebra.cerebraCreator;
     });
   }
 
@@ -38,7 +40,8 @@ export class EditCerebraComponent implements OnInit {
       cerebraName: this.cerebraName,
       cerebraDescription: this.cerebraDescription,
       cerebraTasks: this.cerebraTasks,
-      cerebraTags: this.cerebraTags
+      cerebraTags: this.cerebraTags,
+      cerebraCreator: this.cerebraCreator
     }
 
     this.firebaseService.updateCerebra(this.id, cerebra);

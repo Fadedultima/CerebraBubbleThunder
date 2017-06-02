@@ -17,6 +17,7 @@ import { AddCerebraComponent } from './components/add-cerebra/add-cerebra.compon
 import { EditCerebraComponent } from './components/edit-cerebra/edit-cerebra.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
+
 export const firebaseConfig = {
     apiKey: "AIzaSyBRIJoWGMaQxVyE6pN721edw0-Req64JpY",
     authDomain: "test-3d841.firebaseapp.com",

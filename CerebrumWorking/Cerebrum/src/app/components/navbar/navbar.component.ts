@@ -20,10 +20,8 @@ export class NavbarComponent implements OnInit {
   }
 
   login(){
-    this.af.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup
     });
+
 	  this.router.navigate(['/cerebras']);
   }
 
