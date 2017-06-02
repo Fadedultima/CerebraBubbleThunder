@@ -17,12 +17,15 @@ export class NavbarComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+	  this.af.auth.subscribe(user => {
+		  if(user){
+			 this.router.navigate(['/cerebras']);
+		  }else{
+			  this.router.navigate(['/']);
+		  }
+	  });
   }
 
-  login(){
-    this.af.auth.login();
-	  this.router.navigate(['/cerebras']);
-  }
 
   logout(){
     this.af.auth.logout();
