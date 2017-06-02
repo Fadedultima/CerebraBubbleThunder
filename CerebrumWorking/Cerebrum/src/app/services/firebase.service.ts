@@ -66,6 +66,17 @@ export class FirebaseService {
     return this.af.database.list('likes/' + uid).remove(id);
   }
 
+  checkIfLiked(uid, id){
+    this.af.database.object('likes/' + uid + "/" + id + "/name").take(1).subscribe((data) => {
+      if(data.$value !== null){
+        this.subtractLikeFromCerebra(id);
+        this.removeFromLikes(uid, id);
+      } else{
+        this.addLikeToCerebra(id);
+        this.addToLikes(uid, id);
+      }
+    });
+  }
 
 
 

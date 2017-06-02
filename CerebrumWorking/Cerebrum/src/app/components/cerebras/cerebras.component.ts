@@ -1,5 +1,6 @@
 import { Component, OnInit, trigger, state, style, transition, animate, keyframes, group } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
+import 'rxjs/add/operator/take';
 
 @Component({
   selector: 'app-cerebras',
@@ -24,8 +25,9 @@ export class CerebrasComponent implements OnInit {
   search: any;
   count: any;
 
-  constructor(private firebaseService:FirebaseService) { 
 
+
+  constructor(private firebaseService:FirebaseService) { 
     this.firebaseService.getCerebras().subscribe(cerebras => {
       this.cerebras = cerebras;
       this.count = cerebras.length;
@@ -37,7 +39,13 @@ export class CerebrasComponent implements OnInit {
   }
 
   likeThing(id){
-    this.firebaseService.addLikeToCerebra(id);
+    // document.getElementById(id).style.color = "green";
+    this.firebaseService.af.auth.take(1).subscribe(
+        (auth) => {
+          var userid = auth.google.uid;
+          this.firebaseService.checkIfLiked(userid, id);
+        }
+      );
   }
 
   searchCerebras(){
