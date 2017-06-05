@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, trigger, state, style, animate, transition } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import * as firebase from 'firebase';
@@ -8,6 +8,7 @@ import * as firebase from 'firebase';
   templateUrl: './cerebra.component.html',
   styleUrls: ['./cerebra.component.css']
 })
+
 export class CerebraComponent implements OnInit {
   id: any;
   cerebra: any;
@@ -22,10 +23,8 @@ export class CerebraComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
 
-    //observable so you need to subscribe
     this.firebaseService.getCerebraDetails(this.id).subscribe(cerebra => {
       this.cerebra = cerebra;
-      console.log(cerebra);
     });
   }
 

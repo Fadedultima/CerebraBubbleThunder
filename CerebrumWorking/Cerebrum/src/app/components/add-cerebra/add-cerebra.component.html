@@ -1,37 +1,36 @@
-<h2 class="page-header">Add Cerebra</h2>
+<div class="form-style-10">
+<h1>Add Cerebra<span></span></h1>
 <form (submit)="onAddSubmit()">
-  <div class="form-group">
-    <label>Cerebra Name: </label>
-    <input class="form-control" type="text" [(ngModel)]="cerebraName" name="cerebraName">
-  </div>
-  <div class="form-group">
-    <label>Cerebra Description: </label>
-    <input class="form-control" type="text" [(ngModel)]="cerebraDescription"name="cerebraDescription" >
-  </div>
-  <div class="form-group">
-    <label>Cerebra Tasks: </label>
-<!--
-	  <div>
-	  	<input class="tasks" type="text" ng-repeat="task in taskArray" [(ngModel)]="cerebraTasks" name="cerebraTasks" >
+    <div class="section"><span>1</span>Cerebra Name</div>
+    <div class="inner-wrap">
+        <label>Cerebra Name <input type="text" maxlength="25" [(ngModel)]="cerebraName" name="cerebraName" required></label>
+        <label>Description <input type="text" [(ngModel)]="cerebraDescription"name="cerebraDescription" required></label>
+        
+    </div>
+
+    <div class="section"><span>2</span>Tasks</div>
+    <div class="inner-wrap">
+        <label>Tasks <div *ngFor="let task of cerebraTasks;let index = index">
+        <input name="task{{index}}" [(ngModel)]="cerebraTasks[index].name" type="text">
+      <br>
 	  </div>
--->
-	  <div *ngFor="let task of cerebraTasks;let index = index">
-		  <input name="task{{index}}" [(ngModel)]="cerebraTasks[index].name" type="text">
-	  </div>
-	  <button type="button" (click)="addTask()">Add Task</button>
-  </div>
-  <div class="form-group">
-    <label>Cerebra Tags: </label>
-    <input class="form-control" type="text" [(ngModel)]="cerebraTags" name="cerebraTags" >
-  </div>
-  <div>
+    <button id="addTaskButton" type="button" (click)="addTask()"><span class="glyphicon glyphicon-plus"></span> Add Task</button>
+    </label>
+        
+    </div>
+
+    <div class="section"><span>3</span>Tags</div>
+        <div class="inner-wrap">
+        <label>Tags(No spaces allowed) <input class="form-control" maxlength="20" type="text" [(ngModel)]="cerebraTags" name="cerebraTags" pattern="^\S+$"></label>
+    </div>
+     <div>
     <h4>Cerebra Creator: {{cerebraCreator}}</h4>
   </div>
-  <br>
-  <input type="submit" value="Submit" class="btn btn-success">
-  <br>
+    <div class="button-section">
+     <input type="submit" value="Submit" class="btn btn-success">
+    </div>
 </form>
-<br>
+</div>
 
 
 

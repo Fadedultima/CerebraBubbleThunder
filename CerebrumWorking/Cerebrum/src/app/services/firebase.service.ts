@@ -9,11 +9,11 @@ import 'rxjs/add/operator/take';
 export class FirebaseService {
   cerebras: FirebaseListObservable<any[]>;
   cerebra: FirebaseObjectObservable<any>;
-  folder: any;
+  user_displayName: string;
+  
 
   constructor(public af: AngularFire) { 
     this.cerebras = this.af.database.list('/cerebras') as FirebaseListObservable<Cerebra[]>
-    this.folder = 'cerebras';
   }
 
   getCerebras(){

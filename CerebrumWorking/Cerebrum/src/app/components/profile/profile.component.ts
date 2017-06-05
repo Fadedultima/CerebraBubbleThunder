@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   googlename: any;
   mycerebras: any;
 
-  constructor(public authService: FirebaseService) { 
+  constructor(public authService: FirebaseService, public firebaseService:FirebaseService) { 
     this.authService.af.auth.subscribe(
       (auth) => {
         if(auth == null){
