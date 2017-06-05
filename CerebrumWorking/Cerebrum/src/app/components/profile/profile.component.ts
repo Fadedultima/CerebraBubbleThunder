@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   cerebras: any;
   googlename: any;
   mycerebras: any;
-user_image: any;
+  user_image: any;
 
   constructor(public authService: FirebaseService, public firebaseService:FirebaseService) { 
     this.authService.af.auth.subscribe(
