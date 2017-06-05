@@ -24,6 +24,7 @@ export class CerebrasComponent implements OnInit {
   cerebras: any;
   search: any;
   count: any;
+  uid: any;
 
 
 
@@ -35,17 +36,11 @@ export class CerebrasComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.firebaseService.af.auth.subscribe((auth) => { this.uid = auth.google.uid; });
   }
 
   likeThing(id){
-    // document.getElementById(id).style.color = "green";
-    this.firebaseService.af.auth.take(1).subscribe(
-        (auth) => {
-          var userid = auth.google.uid;
-          this.firebaseService.checkIfLiked(userid, id);
-        }
-      );
+    this.firebaseService.toggleLike(this.uid, id);
   }
 
   searchCerebras(){
