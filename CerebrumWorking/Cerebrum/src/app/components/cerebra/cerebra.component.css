@@ -148,6 +148,10 @@
     background-color: #EE7200;
 }
 
+li {
+    list-style-image: url("/assets/img/cerebrumLogoSmall.png");
+}
+
 
 /*FFD806
 EE7200
