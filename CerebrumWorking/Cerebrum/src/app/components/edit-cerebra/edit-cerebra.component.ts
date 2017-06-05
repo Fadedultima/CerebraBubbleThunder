@@ -47,5 +47,13 @@ export class EditCerebraComponent implements OnInit {
     this.firebaseService.updateCerebra(this.id, cerebra);
     this.router.navigate(['/cerebras']);
   }
+	
+    addTask(event){
+		this.cerebraTasks.push({name: ""});
+	}
+	
+	removeTask(event){
+		this.cerebraTasks.splice(-1,1);
+	}
 
 }
