@@ -10,9 +10,11 @@ export class ProfileComponent implements OnInit {
   user_displayName: string;
   user_email: string;
   isLoggedIn: Boolean;
+  cerebras: any;
+  googlename: any;
+  mycerebras: any;
 
   constructor(public authService: FirebaseService) { 
-
     this.authService.af.auth.subscribe(
       (auth) => {
         if(auth == null){
@@ -27,6 +29,12 @@ export class ProfileComponent implements OnInit {
         }
       }
     );
+
+    this.authService.af.auth.take(1).subscribe((auth) => { 
+        this.authService.getCerebrasByUser(auth.google.displayName).subscribe(cer => {
+        this.cerebras = cer;
+      }); 
+    });
   }
 
   ngOnInit() {

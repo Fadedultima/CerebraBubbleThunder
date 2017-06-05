@@ -41,8 +41,8 @@ export class FirebaseService {
     return this.af.database.list('cerebras').map(_cerebras => _cerebras.filter(cerebra => cerebra.cerebraName.toLowerCase().indexOf(cerebraName) !== -1));
   }
 
-  getCerebrasByUser(cerebraName: any): Observable<Cerebra[]> {
-    return this.af.database.list('cerebras').map(cerebras => cerebras.filter(Cerebra => Cerebra.cerebraCreator.indexOf(cerebraName) !== -1));
+  getCerebrasByUser(cerebraCreator: any): Observable<Cerebra[]> {
+    return this.af.database.list('cerebras').map(_cerebras => _cerebras.filter(cerebra => cerebra.cerebraCreator.indexOf(cerebraCreator) !== -1));
   }
 
   addLikeToCerebra(id){
@@ -70,7 +70,7 @@ export class FirebaseService {
     return this.af.database.list('likes/' + uid).remove(id);
   }
 
-  checkIfLiked(uid, id){
+  toggleLike(uid, id){
     this.af.database.object('likes/' + uid + "/" + id + "/name").take(1).subscribe((data) => {
       if(data.$value !== null){
         this.subtractLikeFromCerebra(id);
@@ -81,9 +81,6 @@ export class FirebaseService {
       }
     });
   }
-
-
-
 
 }
 
