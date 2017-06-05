@@ -10,6 +10,7 @@ export class ProfileComponent implements OnInit {
   user_displayName: string;
   user_email: string;
   isLoggedIn: Boolean;
+  user_image: any;
 
   constructor(public authService: FirebaseService, public firebaseService:FirebaseService) { 
 
@@ -23,6 +24,7 @@ export class ProfileComponent implements OnInit {
         else {
           this.isLoggedIn = true;
           this.user_displayName = auth.google.displayName;
+          this.user_image = auth.google.photoURL;
           this.user_email = auth.google.email;
         }
       }
