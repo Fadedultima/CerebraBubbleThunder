@@ -15,13 +15,14 @@
       <br>
 	  </div>
     <button id="addTaskButton" type="button" (click)="addTask()"><span class="glyphicon glyphicon-plus"></span> Add Task</button>
+	<button id="removeTaskButton" type="button" (click)="removeTask()"><span class="glyphicon glyphicon-minus"></span> Remove Task</button>
     </label>
         
     </div>
 
     <div class="section"><span>3</span>Tags</div>
         <div class="inner-wrap">
-        <label>Tags(No spaces allowed) <input class="form-control" maxlength="20" type="text" [(ngModel)]="cerebraTags" name="cerebraTags" pattern="^\S+$"></label>
+        <label>Tags<input class="form-control" maxlength="20" type="text" [(ngModel)]="cerebraTags" name="cerebraTags"></label>
     </div>
      <div>
     <h4>Cerebra Creator: {{cerebraCreator}}</h4>

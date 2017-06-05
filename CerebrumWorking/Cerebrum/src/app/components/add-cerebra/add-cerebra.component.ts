@@ -43,8 +43,11 @@ export class AddCerebraComponent implements OnInit {
   }
 	
 	addTask(event){
-		console.log("testing");
 		this.cerebraTasks.push({name: ""});
+	}
+	
+	removeTask(event){
+		this.cerebraTasks.splice(-1,1);
 	}
 
 }

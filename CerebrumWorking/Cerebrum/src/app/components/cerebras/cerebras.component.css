@@ -35,3 +35,11 @@
 #likeButton {
     cursor: pointer;
 }
+
+.col-md-2 h6{
+	white-space: nowrap;
+}
+
+a h4{
+	white-space: nowrap;
+}
