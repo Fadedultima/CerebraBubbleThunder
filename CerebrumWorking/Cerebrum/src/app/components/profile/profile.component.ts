@@ -31,6 +31,8 @@ export class ProfileComponent implements OnInit {
         }
       }
     );
+	  
+	  
 
     this.authService.af.auth.take(1).subscribe((auth) => { 
         this.authService.getCerebrasByUser(auth.google.displayName).subscribe(cer => {

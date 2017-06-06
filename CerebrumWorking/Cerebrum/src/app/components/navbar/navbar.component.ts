@@ -17,20 +17,13 @@ export class NavbarComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-	  this.af.auth.subscribe(user => {
-		  if(user){
-			 this.router.navigate(['/cerebras']);
-		  }else{
-			  this.router.navigate(['/']);
-		  }
-	  });
   }
 
 
   logout(){
     this.af.auth.logout();
     this.flashMessage.show('You are logged out', {cssClass: 'alert-success', timeout: 3000})
-    this.router.navigate(['/']);
+    window.location.replace('/');
   }
 
 }
